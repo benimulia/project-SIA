@@ -52,7 +52,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'alamat' => ['required','string','max:255'],
+            'alamat' => ['required','string','max:70'],
             'telp' => ['required','string','max:15'],
             'tmpt_lahir' => ['required','string','max:50'],
             'tgl_lahir' => ['required','date'],

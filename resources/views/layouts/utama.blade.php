@@ -172,14 +172,14 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="/divisi">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Divisi</span>
             </a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="/jabatan">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Jabatan</span>
             </a>

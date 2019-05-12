@@ -18,3 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/divisi','DivisiController@index');
+Route::get('/divisi/create','DivisiController@vcreate');
+Route::post('/divisi/create','DivisiController@create');
+Route::get('/divisi/delete/{id}','DivisiController@delete');
+Route::get('/divisi/edit/{id}','DivisiController@vedit');
+Route::post('/divisi/edit/{id}','DivisiController@edit');
+
+Route::get('/jabatan','JabatanController@index');
+Route::get('/jabatan/create','JabatanController@vcreate');
+Route::post('/jabatan/create','JabatanController@create');
+Route::get('/jabatan/delete/{id}','JabatanController@delete');
+Route::get('/jabatan/edit/{id}','JabatanController@vedit');
+Route::post('/jabatan/edit/{id}','JabatanController@edit');
