@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Tunjangan;
 
-class PotonganController extends Controller
+class TunjanganController extends Controller
 {
     public function index()
     {

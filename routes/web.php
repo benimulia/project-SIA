@@ -38,3 +38,10 @@ Route::post('/potongan/create','PotonganController@create');
 Route::get('/potongan/delete/{id}','PotonganController@delete');
 Route::get('/potongan/edit/{id}','PotonganController@vedit');
 Route::post('/potongan/edit/{id}','PotonganController@edit');
+
+Route::get('/tunjangan','TunjanganController@index');
+Route::get('/tunjangan/create','TunjanganController@vcreate');
+Route::post('/tunjangan/create','TunjanganController@create');
+Route::get('/tunjangan/delete/{id}','TunjanganController@delete');
+Route::get('/tunjangan/edit/{id}','TunjanganController@vedit');
+Route::post('/tunjangan/edit/{id}','TunjanganController@edit');

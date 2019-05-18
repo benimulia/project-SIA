@@ -186,7 +186,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="/tunjangan">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Tunjangan</span>
             </a>
