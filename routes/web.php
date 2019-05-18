@@ -31,3 +31,10 @@ Route::post('/jabatan/create','JabatanController@create');
 Route::get('/jabatan/delete/{id}','JabatanController@delete');
 Route::get('/jabatan/edit/{id}','JabatanController@vedit');
 Route::post('/jabatan/edit/{id}','JabatanController@edit');
+
+Route::get('/potongan','PotonganController@index');
+Route::get('/potongan/create','PotonganController@vcreate');
+Route::post('/potongan/create','PotonganController@create');
+Route::get('/potongan/delete/{id}','PotonganController@delete');
+Route::get('/potongan/edit/{id}','PotonganController@vedit');
+Route::post('/potongan/edit/{id}','PotonganController@edit');

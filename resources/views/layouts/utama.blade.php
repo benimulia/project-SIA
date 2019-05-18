@@ -193,7 +193,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="/potongan">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Potongan</span>
             </a>
