@@ -52,12 +52,9 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'alamat' => ['required','string','max:70'],
-            'telp' => ['required','string','max:15'],
-            'tmpt_lahir' => ['required','string','max:50'],
-            'tgl_lahir' => ['required','date'],
         ]);
     }
+    
 
     /**
      * Create a new user instance after a valid registration.
@@ -71,10 +68,6 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'alamat' => $data['alamat'],
-            'telp' => $data['telp'],
-            'tmpt_lahir' => $data['tmpt_lahir'],
-            'tgl_lahir' => $data['tgl_lahir'],
         ]);
     }
 }

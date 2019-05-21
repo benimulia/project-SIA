@@ -20,6 +20,13 @@
   
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <style>
+      #dt {
+        text-indent: -500px;
+        height: 25px;
+        width: 200px;
+      }
+    </style>
 </head>
 
 <body>
@@ -165,7 +172,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="/pegawai">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Daftar Pegawai</span>
             </a>

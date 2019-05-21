@@ -45,3 +45,10 @@ Route::post('/tunjangan/create','TunjanganController@create');
 Route::get('/tunjangan/delete/{id}','TunjanganController@delete');
 Route::get('/tunjangan/edit/{id}','TunjanganController@vedit');
 Route::post('/tunjangan/edit/{id}','TunjanganController@edit');
+
+Route::get('/pegawai','PegawaiController@index');
+Route::get('/pegawai/create','PegawaiController@vcreate');
+Route::post('/pegawai/create','PegawaiController@create');
+Route::get('/pegawai/delete/{id}','PegawaiController@delete');
+Route::get('/pegawai/edit/{id}','PegawaiController@vedit');
+Route::post('/pegawai/edit/{id}','PegawaiController@edit');
