@@ -10,7 +10,7 @@
                 <ul class="right">
                     <li>
                         <a class="dropdown-trigger" href="#!" data-target="dropdown1">
-                            Selamat Datang, {{ Auth::user()->username }}
+                            Welcome, {{ Auth::user()->username }}
                             <i class="material-icons right white-text">arrow_drop_down</i>
                         </a>
                     </li>
