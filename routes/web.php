@@ -11,44 +11,96 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/**
+ *  you can see the list of all the routes with all details by typing,
+ *  php artisan route:list on the commandline. also change your directory to 
+ *  this project directory when doing so.
+ */
 
-Auth::routes();
+/**
+ * Dashboard Route(s)
+ * 
+ */
+Route::get('/dashboard','DashboardController@index')->name('dashboard');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/divisi','DivisiController@index');
-Route::get('/divisi/create','DivisiController@vcreate');
-Route::post('/divisi/create','DivisiController@create');
-Route::get('/divisi/delete/{id}','DivisiController@delete');
-Route::get('/divisi/edit/{id}','DivisiController@vedit');
-Route::post('/divisi/edit/{id}','DivisiController@edit');
+/**
+ *  Departments Route(s)
+ * 
+ */
+Route::resource('/departments','DepartmentsController');
+Route::post('/departments/search','DepartmentsController@search')->name('departments.search');
 
-Route::get('/jabatan','JabatanController@index');
-Route::get('/jabatan/create','JabatanController@vcreate');
-Route::post('/jabatan/create','JabatanController@create');
-Route::get('/jabatan/delete/{id}','JabatanController@delete');
-Route::get('/jabatan/edit/{id}','JabatanController@vedit');
-Route::post('/jabatan/edit/{id}','JabatanController@edit');
+/**
+ *  Countries Route(s)
+ */
+Route::resource('/countries','CountriesController');
+Route::post('/countries/search','CountriesController@search')->name('countries.search');
 
-Route::get('/potongan','PotonganController@index');
-Route::get('/potongan/create','PotonganController@vcreate');
-Route::post('/potongan/create','PotonganController@create');
-Route::get('/potongan/delete/{id}','PotonganController@delete');
-Route::get('/potongan/edit/{id}','PotonganController@vedit');
-Route::post('/potongan/edit/{id}','PotonganController@edit');
+/**
+ *  Cities Route(s)
+ */
+Route::resource('/cities','CitiesController');
+Route::post('/cities/search','CitiesController@search')->name('cities.search');
 
-Route::get('/tunjangan','TunjanganController@index');
-Route::get('/tunjangan/create','TunjanganController@vcreate');
-Route::post('/tunjangan/create','TunjanganController@create');
-Route::get('/tunjangan/delete/{id}','TunjanganController@delete');
-Route::get('/tunjangan/edit/{id}','TunjanganController@vedit');
-Route::post('/tunjangan/edit/{id}','TunjanganController@edit');
+/**
+ *  Salaries Route(s)
+ */
+Route::resource('/salaries','SalariesController');
+Route::post('/salaries/search','SalariesController@search')->name('salaries.search');
 
-Route::get('/pegawai','PegawaiController@index');
-Route::get('/pegawai/create','PegawaiController@vcreate');
-Route::post('/pegawai/create','PegawaiController@create');
-Route::get('/pegawai/delete/{id}','PegawaiController@delete');
-Route::get('/pegawai/edit/{id}','PegawaiController@vedit');
-Route::post('/pegawai/edit/{id}','PegawaiController@edit');
+/**
+ *  Divisions Route(s)
+ */
+Route::resource('/divisions','DivisionsController');
+Route::post('/divisions/search','DivisionsController@search')->name('divisions.search');
+
+/**
+ *  States Route(s)
+ */
+Route::resource('/states','StatesController');
+Route::post('/states/search','StatesController@search')->name('states.search');
+
+/**
+ *  States Route(s)
+ */
+Route::resource('/employees','EmployeesController');
+
+Route::post('employees/search','EmployeesController@search')->name('employees.search');
+
+/**
+ *  Admins Route(s)
+ */
+Route::resource('/admins','AdminsController');
+Route::post('/admins','AdminsController@search')->name('admins.search');
+Route::post('/admins/create','AdminsController@store')->name('admins.store');
+
+/**
+ *  Auth Route(s)
+ */
+
+//show the login view
+Route::get('/','AuthController@index')->name('login')->middleware('guest');
+
+//Authenticate a user
+Route::post('/','AuthController@authenticate')->name('auth.authenticate');
+
+//logout the user
+Route::get('/logout','AuthController@logout')->name('auth.logout')->middleware('auth');
+
+//show user details
+Route::get('/admin','AuthController@show')->name('auth.show')->middleware('auth');
+
+Route::get('/password/reset','ResetPassword\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('/password/email','ResetPassword\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('/password/reset/{token}','ResetPassword\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('/password/reset','ResetPassword\ResetPasswordController@reset');
+
+/**
+ *  Reports Route(s)
+ */
+
+//Show Reports View
+Route::get('/reports','ReportsController@index')->name('reports.index');
+
+//Generate PDF
+Route::post('/reports/pdf','ReportsController@makeReport')->name('reports.make');
