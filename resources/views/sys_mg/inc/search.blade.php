@@ -8,7 +8,7 @@
             </div>
             <div class="collapsible-body">
                 <div class="row mb-0">
-                    <form action="{{route($route)}}" method="POST">
+                    <form action="{{url($route)}}" method="POST">
                         @csrf()
                         <div class="input-field col s12 m8 offset-m1 l8 offset-l1 xl7 offset-xl1 mb-0 mt-0">
                             @if(isset($type))

@@ -49,6 +49,12 @@ Route::resource('/salaries','SalariesController');
 Route::post('/salaries/search','SalariesController@search')->name('salaries.search');
 
 /**
+ *  Tunjangans Route(s)
+ */
+Route::resource('/tunjangans','TunjangansController');
+Route::post('/tunjangans/search','TunjangansController@search')->name('tunjangans.search');
+
+/**
  *  Divisions Route(s)
  */
 Route::resource('/divisions','DivisionsController');
