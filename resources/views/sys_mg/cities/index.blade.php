@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <h4 class="grey-text text-darken-2 center">City Management</h4>
+    <h4 class="grey-text text-darken-2 center">Manajemen Kota</h4>
 
     {{-- Include the searh component with with title and route --}}
-    @component('sys_mg.inc.search',['title' => 'City' , 'route' => 'cities.search'])
+    @component('sys_mg.inc.search',['title' => 'Kota' , 'route' => 'cities.search'])
     @endcomponent
 
     <div class="row">
@@ -12,14 +12,14 @@
         <div class="card col s12 m12 l12 xl12">
             <div class="card-content">
                 <div class="row">
-                    <h5 class="pl-15 grey-text text-darken-2">Cities List</h5>
+                    <h5 class="pl-15 grey-text text-darken-2">Daftar Kota</h5>
                     <!-- Table that shows Cities List -->
                     <table class="responsive-table col s12 m12 l12 xl12">
                         <thead class="grey-text text-darken-1">
                             <tr>
                                 <th>ID</th>
-                                <th>City Name</th>
-                                <th>Zip Code</th>
+                                <th>Nama Kota</th>
+                                <th>Kode Pos</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
                                 <th>Options</th>
@@ -54,7 +54,7 @@
                             @else
                                 <!-- if there are no cities then show this message -->
                                 <tr>
-                                    <td colspan="5"><h6 class="grey-text text-darken-2 center">No Cities  found!</h6></td>
+                                    <td colspan="5"><h6 class="grey-text text-darken-2 center">Data kota tidak ditemukan!</h6></td>
                                 </tr>
                             @endif
                             @if(isset($search))

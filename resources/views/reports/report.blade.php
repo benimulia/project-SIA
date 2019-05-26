@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{{public_path('css/materialize.css')}}">
-        <title>Employee Management System</title>
+        <title>Sistem MSDM</title>
         <style>
             td{
                 border-top:#9e9e9e 1px solid !important;
@@ -22,25 +22,25 @@
         </style>
     </head>
     <body>
-        <h4 class="grey-text text-darken-1 center">Employee Hired Report</h4>
+        <h4 class="grey-text text-darken-1 center">Laporan Pegawai</h4>
         <table>
             <thead class="grey-text text-darken-1">
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Nama</th>
                     <th>Email</th>
-                    <th>Phone</th>
-                    <th>Zip Code</th>
-                    <th>Country</th>
-                    <th>Salary</th>
-                    <th>City</th>
-                    <th>Salary</th>
-                    <th>Department</th>
-                    <th>Division</th>
-                    <th>age</th>
-                    <th>address</th>
-                    <th>Join Date</th>
-                    <th>Birth Date</th>
+                    <th>HP</th>
+                    <th>Kode Pos</th>
+                    <th>Negara</th>
+                    <th>Provinsi</th>
+                    <th>Kota</th>
+                    <th>Gaji Pokok</th>
+                    <th>Departemen</th>
+                    <th>Divisi</th>
+                    <th>Umur</th>
+                    <th>Alamat</th>
+                    <th>Tanggal Masuk</th>
+                    <th>Tanggal Lahir</th>
                 </tr>
             </thead>
             <tbody>

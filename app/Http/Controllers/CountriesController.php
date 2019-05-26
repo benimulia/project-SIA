@@ -54,7 +54,7 @@ class CountriesController extends Controller
         $country = new Country();
         $country->country_name = $request->input('country_name');
         $country->save();
-        return redirect('/countries')->with('info','New Country has been created!');
+        return redirect('/countries')->with('info','Data negara berhasil ditambah!');
     }
 
     /**
@@ -96,7 +96,7 @@ class CountriesController extends Controller
         $country = Country::find($id);
         $country->country_name = $request->input('country_name');
         $country->save();
-        return redirect('/countries')->with('info','Selected Country has been Updated!');
+        return redirect('/countries')->with('info','Data negara berhasil diubah!');
     }
 
     /**
@@ -109,7 +109,7 @@ class CountriesController extends Controller
     {
         $country = Country::find($id);
         $country->delete();
-        return redirect('/countries')->with('info','Selected Country has been deleted!');
+        return redirect('/countries')->with('info','Data negara berhasil dihapus!');
     }
 
     /**

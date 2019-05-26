@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <h4 class="grey-text text-darken-2 center">Salary Management</h4>
+    <h4 class="grey-text text-darken-2 center">Manajemen Gaji Pokok</h4>
     
     {{-- Include the searh component with with title and route --}}
-    @component('sys_mg.inc.search',['title' => 'Salaries' , 'route' => 'salaries.search' , 'type' => 'number'])
+    @component('sys_mg.inc.search',['title' => 'Gaji pokok' , 'route' => 'salaries.search' , 'type' => 'number'])
     @endcomponent
 
     <div class="row">
@@ -12,13 +12,13 @@
         <div class="card col s12 m12 l12 xl12">
             <div class="card-content">
                 <div class="row">
-                    <h5 class="pl-15 grey-text text-darken-2">Salaries List</h5>
+                    <h5 class="pl-15 grey-text text-darken-2">Daftar Gaji Pokok</h5>
                     <!-- Table that shows Departments List -->
                     <table class="responsive-table col s12 m12 l12 xl12">
                         <thead class="grey-text text-darken-2">
                             <tr>
                                 <th>ID</th>
-                                <th>Salary Amount</th>
+                                <th>Besar Gaji Pokok</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
                                 <th>Options</th>
@@ -52,7 +52,7 @@
                             @else
                                 <!-- if there are no salaries then show this message -->
                                 <tr>
-                                    <td colspan="5"><h6 class="grey-text text-darken-2 center">No Salaries found yet!</h6></td>
+                                    <td colspan="5"><h6 class="grey-text text-darken-2 center">Data gaji pokok tidak ditemukan!</h6></td>
                                 </tr>
                             @endif
                             @if(isset($search))

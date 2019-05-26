@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="card-panel grey-text text-darken-2 mt-20">
-            <h4 class="grey-text text-darken-1 center">My Details</h4>
+            <h4 class="grey-text text-darken-1 center">Details</h4>
             <div class="row">
                 <div class="row collection mt-20">
                     <!-- Show this image on small devices -->

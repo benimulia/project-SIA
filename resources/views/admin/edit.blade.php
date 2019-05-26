@@ -59,7 +59,7 @@
                     </form>
                 </div>
                 <div class="card-action">
-                    <a href="/admins">Go Back</a>
+                    <a href="/admins">Back</a>
                 </div>
             </div>
         </div>

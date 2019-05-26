@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <h4 class="grey-text text-darken-2 center">Department Management</h4>
+    <h4 class="grey-text text-darken-2 center">Manajemen Departemen</h4>
     
     {{-- Include the searh component with with title and route --}}
-    @component('sys_mg.inc.search',['title' => 'Department' , 'route' => 'departments.search'])
+    @component('sys_mg.inc.search',['title' => 'Departemen' , 'route' => 'departments.search'])
     @endcomponent
     
     <div class="row">
@@ -12,13 +12,13 @@
         <div class="card col s12 m12 l12 xl12">
             <div class="card-content">
                 <div class="row">
-                    <h5 class="pl-15 grey-text text-darken-2">Department List</h5>
+                    <h5 class="pl-15 grey-text text-darken-2">Daftar Departemen</h5>
                     {{-- Table that shows Departments List --}}
                     <table class="responsive-table col s12 m12 l12 xl12">
                         <thead class="grey-text text-darken-2">
                             <tr>
                                 <th>ID</th>
-                                <th>Department Name</th>
+                                <th>Nama Departemen</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
                                 <th>Options</th>
@@ -70,7 +70,7 @@
                             @else
                                 {{-- if there are no departments then show this message --}}
                                 <tr>
-                                    <td colspan="5"><h6 class="grey-text text-darken-2 center">No Departments found!</h6></td>
+                                    <td colspan="5"><h6 class="grey-text text-darken-2 center">Data departemen tidak dtiemukan!</h6></td>
                                 </tr>
                             @endif
                             @if(isset($search))

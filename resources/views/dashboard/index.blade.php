@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col s7 xl7">
                             <i class="material-icons medium white-text pt-5">person</i>
-                            <h6 class="no-padding txt-md">Admins</h6>
+                            <h6 class="no-padding txt-md">Admin</h6>
                         </div>
                         <div class="col s5 xl5">
                             <p class="no-padding center mt txt-sm">Total({{$t_admins}})</p>
@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col s7 xl7">
                             <i class="material-icons medium white-text pt-5">person_outline</i>
-                            <h6 class="no-padding txt-md">Employees</h6>
+                            <h6 class="no-padding txt-md">Pegawai</h6>
                         </div>
                         <div class="col s5 xl5">
                             <p class="no-padding center mt txt-sm">Total({{$t_employees}})</p>
@@ -34,7 +34,7 @@
                     <div class="row">
                         <div class="col s7 xl7">
                             <i class="material-icons medium white-text pt-5">business</i>
-                            <h6 class="no-padding txt-md">Departments</h6>
+                            <h6 class="no-padding txt-md">Departemen</h6>
                         </div>
                         <div class="col s5 xl5">
                             <p class="no-padding center mt txt-sm">Total({{$t_departments}})</p>
@@ -47,7 +47,7 @@
                     <div class="row">
                         <div class="col s7 xl7">
                             <i class="material-icons medium white-text pt-5">location_city</i>
-                            <h6 class="no-padding txt-md">Cities</h6>
+                            <h6 class="no-padding txt-md">Kota</h6>
                         </div>
                         <div class="col s5 xl5">
                             <p class="no-padding center mt txt-sm">Total({{$t_cities}})</p>
@@ -60,7 +60,7 @@
                     <div class="row">
                         <div class="col s7 xl7">
                             <i class="material-icons medium white-text pt-5">terrain</i>
-                            <h6 class="no-padding txt-md">Countries</h6>
+                            <h6 class="no-padding txt-md">Negara</h6>
                         </div>
                         <div class="col s5 xl5">
                             <p class="no-padding center mt txt-sm">Total({{$t_countries}})</p>
@@ -73,7 +73,7 @@
                     <div class="row">
                         <div class="col s7 xl7">
                             <i class="material-icons medium white-text pt-5">attach_money</i>
-                            <h6 class="no-padding txt-md">Salaries</h6>
+                            <h6 class="no-padding txt-md">Gaji Pokok</h6>
                         </div>
                         <div class="col s5 xl5">
                             <p class="no-padding center mt txt-sm">Total({{$t_salaries}})</p>
@@ -86,7 +86,7 @@
                     <div class="row">
                         <div class="col s7 xl7">
                             <i class="material-icons medium white-text pt-5">grid_on</i>
-                            <h6 class="no-padding txt-md">States</h6>
+                            <h6 class="no-padding txt-md">Provinsi</h6>
                         </div>
                         <div class="col s5 xl5">
                             <p class="no-padding center mt txt-sm">Total({{$t_states}})</p>
@@ -99,7 +99,7 @@
                     <div class="row">
                         <div class="col s7 xl7">
                             <i class="material-icons medium white-text pt-5">business</i>
-                            <h6 class="no-padding txt-md">Divisions</h6>
+                            <h6 class="no-padding txt-md">Divisi</h6>
                         </div>
                         <div class="col s5 xl5">
                             <p class="no-padding center mt txt-sm">Total({{$t_divisions}})</p>
@@ -136,7 +136,7 @@
                     '{{Carbon\Carbon::now()->subMonths(1)->toFormattedDateString()}}'
                     ],
                 datasets:[{
-                    label:'Employment Last Four Months',
+                    label:'Grafik Pegawai 4 Bulan Terakhir',
                     data:[
                         '{{$emp_count_4}}',
                         '{{$emp_count_3}}',

@@ -4,7 +4,7 @@
     <div class="container row">
         <div class="col m6 offset-m3 l6 offset-l3 xl4 offset-xl4 s10 offset-s1 card card-login z-depth-4">
             <div class="card-title card-title-login gradient-bg lighten-2 white-text">
-                <h5 class="center flow-text">Login to EMS</h5>
+                <h5 class="center flow-text">Login to Sistem MSDM</h5>
             </div>
             <div class="card-content">
                 <form action="{{ route('auth.authenticate') }}" method="POST">

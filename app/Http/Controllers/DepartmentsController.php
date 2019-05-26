@@ -105,7 +105,7 @@ class DepartmentsController extends Controller
          *  see the inc/alert view
          */
         
-         return redirect('/departments')->with('info','department has been Created!');
+         return redirect('/departments')->with('info','Data departemen berhasil ditambah!');
     }
 
     /**
@@ -171,7 +171,7 @@ class DepartmentsController extends Controller
         /**
          *  redirecting with a message.
          */
-        return redirect('/departments')->with('info','Selected Department has been updated!');
+        return redirect('/departments')->with('info','Data departemen berhasil diubah!');
     }
 
     /**
@@ -188,7 +188,7 @@ class DepartmentsController extends Controller
          */
         $department = Department::find($id);
         $department->delete();
-        return redirect('/departments')->with('info','Selected Department has been Deleted!');
+        return redirect('/departments')->with('info','Data departemen berhasil dihapus!');
     }
 
     /**

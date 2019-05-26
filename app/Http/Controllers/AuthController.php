@@ -34,7 +34,7 @@ class AuthController extends Controller
         }else{
             // Authentication failed...
             //redirect the user with the old input
-            return redirect('/')->withInput()->with('info','Invalid Credentials!');
+            return redirect('/')->withInput()->with('info','Email atau password Anda salah!');
         }
     }
 

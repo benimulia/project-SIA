@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <h4 class="grey-text text-darken-2 center">Admin Management</h4>
+    <h4 class="grey-text text-darken-2 center">Manajemen Admin</h4>
     
     {{-- Search --}}
     <div class="row mb-0">
@@ -44,14 +44,14 @@
         <div class="card col s12 m12 l12 xl12">
             <div class="card-content">
                 <div class="row">
-                    <h5 class="pl-15 grey-text text-darken-2">Admins List</h5>
+                    <h5 class="pl-15 grey-text text-darken-2">List Admin</h5>
                     <!-- Table that shows Admins List -->
                     <table class="responsive-table col s12 m12 l12 xl12">
                         <thead class="grey-text text-darken-2">
                             <tr>
                                 <th>ID</th>
                                 <th>Picture</th>
-                                <th>Name</th>
+                                <th>Nama</th>
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Options</th>
@@ -87,14 +87,14 @@
                                 @else
                                     {{-- if there are no admins then show this message --}}
                                     <tr>
-                                        <td colspan="5"><h6 class="grey-text text-darken-2 center">No Admins Found!</h6></td>
+                                        <td colspan="5"><h6 class="grey-text text-darken-2 center">Data admin tidak ditemukan!</h6></td>
                                     </tr>
                                 @endif
                                 {{-- If we are searching then show this link --}}
                                 @if(isset($search))
                                     <tr>
                                         <td colspan="4">
-                                            <a href="/admins" class="right">Show All</a>
+                                            <a href="/admins" class="right">Lihat semua</a>
                                         </td>
                                     </tr>
                                 @endif

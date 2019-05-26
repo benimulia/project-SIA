@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <h4 class="grey-text text-darken-1 center">Manage Employees</h4>
+    <h4 class="grey-text text-darken-1 center">Daftar Pegawai</h4>
     {{-- Search --}}
     <div class="row mb-0">
         <ul class="collapsible">
             <li>
                 <div class="collapsible-header">
                     <i class="material-icons">search</i>
-                    Search Employees
+                    Search Pegawai
                 </div>
                 <div class="collapsible-body">
                     <div class="row mb-0">
@@ -16,7 +16,7 @@
                             @csrf()
                             <div class="input-field col s12 m6 l5 xl6">
                                 <input id="search" type="text" name="search" >
-                                <label for="search">Search Employee</label>
+                                <label for="search">Search Pegawai</label>
                                 <span class="{{$errors->has('search') ? 'helper-text red-text' : '' }}">{{$errors->has('search') ? $errors->first('search') : '' }}</span>
                             </div>
                             <div class="input-field col s12 m6 l4 xl4">
@@ -24,7 +24,7 @@
                                     <option value="first_name">First Name</option>
                                     <option value="last_name">Last Name</option>
                                     <option value="email">Email</option>
-                                    <option value="address">Address</option>
+                                    <option value="address">Alamat</option>
                                 </select>
                                 <label for="options">Search by:</label>
                             </div>
@@ -43,17 +43,17 @@
     <div class="card">
         <div class="card-content">
             <div class="row">
-                <h5 class="pl-15 grey-text text-darken-2">Employee List</h5>
+                <h5 class="pl-15 grey-text text-darken-2">Data Pegawai</h5>
                 <!-- Table that shows Employee List -->
                 <table class="responsive-table col s12 m12 l12 xl12">
                     <thead class="grey-text text-darken-1">
                         <tr>
                             <th>ID</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Department</th>
-                            <th>Division</th>
-                            <th>Join Date</th>
+                            <th>Foto</th>
+                            <th>Nama</th>
+                            <th>Departemen</th>
+                            <th>Divisi</th>
+                            <th>Tanggal Masuk</th>
                             <th>Options</th>
                         </tr>
                     </thead>

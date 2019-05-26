@@ -55,7 +55,7 @@ class AdminsController extends Controller
         $this->validateRequest($request,NULL);
         $fileNameToStore = $this->handleImageUpload($request);
         $this->setAdmin($request ,$admin, $fileNameToStore);
-        return redirect('/admins')->with('info','New Admin has been created!');
+        return redirect('/admins')->with('info','Admin baru berhasil ditambah!');
     }
 
     /**
@@ -92,7 +92,7 @@ class AdminsController extends Controller
         }
         
         $this->setAdmin($request, $admin ,$fileNameToStore);
-        return redirect('/admins')->with('info','selected admin has been updated');
+        return redirect('/admins')->with('info','Data admin berhasil diubah');
     }
 
     /**
@@ -109,7 +109,7 @@ class AdminsController extends Controller
          */
         if($id == Auth::user()->id){
             //redirect to admins route
-            return redirect('/admins')->with('info','Authenticated Admin cannot be deleted!');
+            return redirect('/admins')->with('info','Tidak dapat dihapus!');
         }
         
         $admin = Admin::find($id);
@@ -117,7 +117,7 @@ class AdminsController extends Controller
         //delete the admin picture
         Storage::delete('public/admins/'.$admin->picture);
         $admin->delete();
-        return redirect('/admins')->with('info','selected admin has been deleted!');
+        return redirect('/admins')->with('info','Data admin berhasil dihapus!');
     }
 
     /**
