@@ -8,13 +8,13 @@
                     <div class="row">
                         <form action="{{route('tunjangans.update',$tunjangan->id)}}" method="POST">
                             <div class="input-field no-margin">
-                                <i class="material-icons prefix">business</i>
+                                <i class="material-icons prefix">add_circle</i>
                                 <input type="text" name="tunjangan_name" id="tunjangan_name" value="{{Request::old('tunjangan_name') ? : $tunjangan->tunjangan_name}}">
                                 <label for="tunjangan_name">Nama Tunjangan</label>
                                 <span class="{{$errors->has('tunjangan_name') ? 'helper-text red-text' : ''}}">{{$errors->first('tunjangan_name')}}</span>
                             </div>
                             <div class="input-field no-margin">
-                                <i class="material-icons prefix">business</i>
+                                <i class="material-icons prefix">attach_money</i>
                                 <input type="text" name="jml_tunjangan" id="jml_tunjangan" value="{{Request::old('jml_tunjangan') ? : $tunjangan->jml_tunjangan}}">
                                 <label for="jml_tunjangan">Jumlah Tunjangan</label>
                                 <span class="{{$errors->has('jml_tunjangan') ? 'helper-text red-text' : ''}}">{{$errors->first('jml_tunjangan')}}</span>

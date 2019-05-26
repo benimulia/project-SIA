@@ -55,6 +55,12 @@ Route::resource('/tunjangans','TunjangansController');
 Route::post('/tunjangans/search','TunjangansController@search')->name('tunjangans.search');
 
 /**
+ *  Potongans Route(s)
+ */
+Route::resource('/potongans','PotongansController');
+Route::post('/potongans/search','PotongansController@search')->name('potongans.search');
+
+/**
  *  Divisions Route(s)
  */
 Route::resource('/divisions','DivisionsController');
