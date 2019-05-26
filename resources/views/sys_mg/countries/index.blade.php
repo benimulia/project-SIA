@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <h4 class="grey-text text-darken-2 center">Country Management</h4>
+    <h4 class="grey-text text-darken-2 center">Manajemen Negara</h4>
     
     {{-- Include the searh component with with title and route --}}
-    @component('sys_mg.inc.search',['title' => 'Country' , 'route' => 'countries.search'])
+    @component('sys_mg.inc.search',['title' => 'Negara' , 'route' => 'countries.search'])
     @endcomponent
 
     <div class="row">
@@ -12,13 +12,13 @@
         <div class="card col s12 m12 l12 xl12">
             <div class="card-content">
                 <div class="row">
-                    <h5 class="pl-15 grey-text text-darken-2">Countries List</h5>
+                    <h5 class="pl-15 grey-text text-darken-2">Daftar Negara</h5>
                     <!-- Table that shows Countries List -->
                     <table class="responsive-table col s12 m12 l12 xl12">
                         <thead class="grey-text text-darken-2">
                             <tr>
                                 <th>ID</th>
-                                <th>Country Name</th>
+                                <th>Nama Negara</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
                                 <th>Options</th>
@@ -52,7 +52,7 @@
                             @else
                                 <!-- if there are no countries then show this message -->
                                 <tr>
-                                    <td colspan="5"><h6 class="grey-text text-darken-2 center">No Countries Found!</h6></td>
+                                    <td colspan="5"><h6 class="grey-text text-darken-2 center">Data negara tidak ditemukan!</h6></td>
                                 </tr>
                             @endif
                             @if(isset($search))

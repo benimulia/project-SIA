@@ -54,7 +54,7 @@ class SalariesController extends Controller
         $salary = new Salary();
         $salary->s_amount = $request->input('s_amount');
         $salary->save();
-        return redirect('/salaries')->with('info','Salary has been created!');
+        return redirect('/salaries')->with('info','Data gaji berhasil ditambah!');
     }
 
     /**
@@ -95,7 +95,7 @@ class SalariesController extends Controller
         $salary = Salary::find($id);
         $salary->s_amount = $request->input('s_amount');
         $salary->save();
-        return redirect('/salaries')->with('info','Selected salary has been updated!');
+        return redirect('/salaries')->with('info','Data gaji berhasil diubah!');
     }
 
     /**
@@ -108,7 +108,7 @@ class SalariesController extends Controller
     {
         $salary = Salary::find($id);
         $salary->delete();
-        return redirect('/salaries')->with('info','Selected salary has been deleted!');
+        return redirect('/salaries')->with('info','Data gaji berhasil dihapus!');
     }
 
     /**

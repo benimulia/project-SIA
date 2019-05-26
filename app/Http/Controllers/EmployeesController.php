@@ -111,7 +111,7 @@ class EmployeesController extends Controller
          */
         $this->setEmployee($employee,$request,$fileNameToStore);
         
-        return redirect('/employees')->with('info','New Employee has been created!');
+        return redirect('/employees')->with('info','Pegawai baru telah ditambahkan');
     }
 
     /**
@@ -186,7 +186,7 @@ class EmployeesController extends Controller
          *  method
          */
         $this->setEmployee($employee,$request,$fileNameToStore);
-        return redirect('/employees')->with('info','Selected Employee has been updated!');
+        return redirect('/employees')->with('info','Data pegawai berhasil diubah!');
     }
 
     /**
@@ -200,7 +200,7 @@ class EmployeesController extends Controller
         $employee = Employee::find($id);
         $employee->delete();
         Storage::delete('public/employee_images/'.$employee->picture);
-        return redirect('/employees')->with('info','Selected Employee has been deleted!');
+        return redirect('/employees')->with('info','Data pegawai telah dihapus!');
     }
 
     /**

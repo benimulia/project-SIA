@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="card-panel grey-text text-darken-2 mt-20">
-            <h4 class="grey-text text-darken-1 center">Employee Details</h4>
+            <h4 class="grey-text text-darken-1 center">Detail Pegawai</h4>
             <div class="row">
                 <div class="row collection mt-20">
                     <!-- Show this image on small devices -->
@@ -24,31 +24,31 @@
                 </div>
                 <div class="collection">
                     <div class=" row">
-                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Age :</span><span class="col m8 l8 xl9">{{$employee->age}}</span></p>
+                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Umur :</span><span class="col m8 l8 xl9">{{$employee->age}}</span></p>
                     </div>
                     <div class="row">
-                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Phone :</span><span class="col m8 l8 xl9">{{$employee->phone}}</span></p>
+                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">HP :</span><span class="col m8 l8 xl9">{{$employee->phone}}</span></p>
                     </div>
                     <div class="row">
-                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Zip Code :</span><span class="col m8 l8 xl9">{{$employee->empCity->zip_code}}</span></p>
+                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Kode Pos :</span><span class="col m8 l8 xl9">{{$employee->empCity->zip_code}}</span></p>
                     </div>
                     <div class="row">
-                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Department :</span><span class="col m8 l8 xl9">{{$employee->empDepartment->dept_name}}</span></p>
+                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Departemen :</span><span class="col m8 l8 xl9">{{$employee->empDepartment->dept_name}}</span></p>
                     </div>
                     <div class="row">
-                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Division :</span><span class="col m8 l8 xl9">{{$employee->empDivision->division_name}}</span></p>
+                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Divisi :</span><span class="col m8 l8 xl9">{{$employee->empDivision->division_name}}</span></p>
                     </div>
                     <div class="row">
                         <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Email :</span><span class="col m8 l8 xl9">{{$employee->email}}</span></p>
                     </div>
                     <div class="row">
-                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Salary :</span><span class="col m8 l8 xl9">${{$employee->empSalary->s_amount}}/-</span></p>
+                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Gaji Pokok :</span><span class="col m8 l8 xl9">${{$employee->empSalary->s_amount}}/-</span></p>
                     </div>
                     <div class="row">
-                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Joined Date :</span><span class="col m8 l8 xl9">{{$employee->join_date}}</span></p>
+                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Tanggal Masuk :</span><span class="col m8 l8 xl9">{{$employee->join_date}}</span></p>
                     </div>
                     <div class="row">
-                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Date of Birth :</span><span class="col m8 l8 xl9">{{$employee->birth_date}}</span></p>
+                        <p class="pl-15"><span class="bold col s5 m4 l4 xl3">Tanggal Lahir :</span><span class="col m8 l8 xl9">{{$employee->birth_date}}</span></p>
                     </div>
                 </div>
                 <form action="{{route('employees.destroy',$employee->id)}}" method="POST">

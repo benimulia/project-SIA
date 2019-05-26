@@ -90,12 +90,12 @@ class DivisionsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'division_name' => 'required|min:3|unique:divisions'
+            'division_name' => 'required|min:2|unique:divisions'
         ]);
         $division = Division::find($id);
         $division->division_name = $request->input('division_name');
         $division->save();
-        return redirect('/divisions')->with('info','Selected Division has been updated!');
+        return redirect('/divisions')->with('info','Data divisi berhasil diubah!');
     }
 
     /**
@@ -108,7 +108,7 @@ class DivisionsController extends Controller
     {
         $division = Division::find($id);
         $division->delete();
-        return redirect('/divisions')->with('info','Selected Division has been deleted!');
+        return redirect('/divisions')->with('info','data divisi berhasil dihapus!');
     }
 
     /**

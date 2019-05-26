@@ -36,6 +36,18 @@
                             </a>
                         </li>
                         <li>
+                            <a href="/tunjangans" class="waves-effect waves-grey">
+                                <i class="material-icons">add_circle</i>
+                                Tunjangan
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/potongans" class="waves-effect waves-grey">
+                                <i class="material-icons">money_off</i>
+                                Potongan
+                            </a>
+                        </li>
+                        <li>
                             <a href="/divisions" class="waves-effect waves-grey">
                             <i class="material-icons">business</i>
                                 Divisi

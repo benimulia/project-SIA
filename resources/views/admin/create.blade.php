@@ -4,7 +4,7 @@
         <div class="row">
             <div class="card col s12 m12 l12 xl12 mt-20">
                 <div>
-                <h4 class="center grey-text text-darken-2 card-title">Create New Admin</h4>
+                <h4 class="center grey-text text-darken-2 card-title">Create Admin Baru</h4>
                 </div>
                 <hr>
                 <div class="card-content">
@@ -58,7 +58,7 @@
                     </form>
                 </div>
                 <div class="card-action">
-                    <a href="/admins">Go Back</a>
+                    <a href="/admins">Back</a>
                 </div>
             </div>
         </div>

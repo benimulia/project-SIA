@@ -3,14 +3,14 @@
     <div class="container">
         <div class="row">
             <div class="card col s12 m8 offset-m2 l8 offset-l2 xl8 offset-xl2 card-mt-15">
-                <h4 class="center grey-text text-darken-2 card-title">Update Division</h4>
+                <h4 class="center grey-text text-darken-2 card-title">Update Divisi</h4>
                 <div class="card-content">
                     <div class="row">
                         <form action="{{route('divisions.update',$division->id)}}" method="POST">
                             <div class="input-field no-margin">
                                 <i class="material-icons prefix">business</i>
                                 <input type="text" name="division_name" id="division_name" value="{{Request::old('division_name') ? : $division->division_name}}">
-                                <label for="division_name">Division Name</label>
+                                <label for="division_name">Nama Divisi</label>
                                 <span class="{{$errors->has('division_name') ? 'helper-text red-text' : ''}}">{{$errors->first('division_name')}}</span>
                             </div>
                             @method('PUT')
@@ -19,7 +19,7 @@
                         </form>
                     </div>
                     <div class="card-action">
-                        <a href="/divisions">Go Back</a>
+                        <a href="/divisions">Back</a>
                     </div>
                 </div>
             </div>

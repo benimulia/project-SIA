@@ -56,7 +56,7 @@ class CitiesController extends Controller
         $city->city_name = $request->input('city_name');
         $city->zip_code = $request->input('zip_code');
         $city->save();
-        return redirect('/cities')->with('info','City has been created!');
+        return redirect('/cities')->with('info','Data kota berhasil ditambah!');
     }
 
     /**
@@ -99,7 +99,7 @@ class CitiesController extends Controller
         $city->city_name = $request->input('city_name');
         $city->zip_code = $request->input('zip_code');
         $city->save();
-        return redirect('/cities')->with('info','Selected city has been updated!');
+        return redirect('/cities')->with('info','Data kota berhasil diubah!');
         
     }
 
@@ -113,7 +113,7 @@ class CitiesController extends Controller
     {
         $city = City::find($id);
         $city->delete();
-        return redirect('/cities')->with('info','Selected city has been deleted!');
+        return redirect('/cities')->with('info','Data kota berhasil dihapus!');
     }
 
     /**

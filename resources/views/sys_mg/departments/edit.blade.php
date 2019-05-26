@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="card col s12 m8 offset-m2 l8 offset-l2 xl8 offset-xl2 card-mt-15">
-                <h4 class="center grey-text text-darken-2 card-title">Update Department</h4>
+                <h4 class="center grey-text text-darken-2 card-title">Update Departemen</h4>
                 <div class="card-content">
                     <div class="row">
                         <form action="{{route('departments.update',$department->id)}}" method="POST">
@@ -15,7 +15,7 @@
                             <div class="input-field no-margin">
                             <i class="material-icons prefix">account_balance</i>
                                 <input type="text" name="dept_name" id="dept_name" value="{{Request::old('dept_name') ? : $department->dept_name}}">
-                                <label for="dept_name">Department Name</label>
+                                <label for="dept_name">Nama Departemen</label>
                                 <span class="{{$errors->has('dept_name') ? 'helper-text red-text' : ''}}">{{$errors->first('dept_name')}}</span>
                             </div>
                             @method('PUT')
@@ -24,7 +24,7 @@
                         </form>
                     </div>
                     <div class="card-action">
-                        <a href="/departments">Go Back</a>
+                        <a href="/departments">Back</a>
                     </div>
                 </div>
             </div>

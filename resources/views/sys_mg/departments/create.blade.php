@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="card col s12 m8 offset-m2 l8 offset-l2 xl8 offset-xl2 card-mt-15">
-                <h4 class="center grey-text text-darken-2 card-title">Add Department</h4>
+                <h4 class="center grey-text text-darken-2 card-title">Tambah Departemen</h4>
                 <div class="card-content">
                     <div class="row">
                         <!--
@@ -26,7 +26,7 @@
                                     previously, else set value to ''.
                                 -->
                                 <input type="text" name="dept_name" id="dept_name" class="validate" value="{{ Request::old('dept_name') ? : '' }}">
-                                <label for="dept_name">Department Name</label>
+                                <label for="dept_name">Nama Departemen</label>
                                 <!--
                                     in span tag below,
                                     we are checking for validation errors
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="card-action">
-                    <a href="/departments">Go Back</a>
+                    <a href="/departments">Back</a>
                 </div>
             </div>
         </div>

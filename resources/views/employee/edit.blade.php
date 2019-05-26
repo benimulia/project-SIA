@@ -4,7 +4,7 @@
         <div class="row">
             <div class="card col s12 m12 l12 xl12 mt-20">
                 <div>
-                <h4 class="center grey-text text-darken-2 card-title">Update Employee</h4>
+                <h4 class="center grey-text text-darken-2 card-title">Update Pegawai</h4>
                 </div>
                 <hr>
                 <div class="card-content">
@@ -31,25 +31,25 @@
                             <div class="input-field col s12 m6 l6 xl4 offset-xl2">
                             <i class="material-icons prefix">person_outline</i>
                                 <input type="number" name="age" id="age" value="{{old('age') ? : $employee->age}}">
-                                <label for="age">age</label>
+                                <label for="age">Umur</label>
                                 <span class="{{$errors->has('age') ? 'helper-text red-text' : ''}}">{{$errors->has('age') ? $errors->first('age') : ''}}</span>
                             </div>
                             <div class="input-field col s12 m6 m6 xl4">
                                 <i class="material-icons prefix">contact_phone</i>
                                 <input type="number" name="phone" id="phone" value="{{old('phone') ? : $employee->phone}}">
-                                <label for="phone">Phone</label>
+                                <label for="phone">HP</label>
                                 <span class="{{$errors->has('phone') ? 'helper-text red-text' : ''}}">{{$errors->has('phone') ? $errors->first('phone') : ''}}</span>
                             </div>
                             <div class="input-field col s12 m12 l12 xl8 offset-xl2">
                                 <i class="material-icons prefix">add_location</i>
                                 <textarea name="address" id="address" class="materialize-textarea" >{{Request::old('address') ? : $employee->address}}</textarea>
-                                <label for="address">Address</label>
+                                <label for="address">Alamat</label>
                                 <span class="{{$errors->has('address') ? 'helper-text red-text' : ''}}">{{$errors->has('address') ? $errors->first('address') : ''}}</span>
                             </div>
                             <div class="input-field col s12 m6 l6 xl4 offset-xl2">
                                 <i class="material-icons prefix">person_outline</i>
                                 <select name="gender">
-                                    <option value="" disabled>Choose a gender</option>
+                                    <option value="" disabled>Pilih jenis kelamin</option>
                                     <!--
                                         make the option active which matches the employee gender
                                     -->
@@ -62,75 +62,75 @@
                             <div class="input-field col s12 m6 l6 xl4">
                                 <i class="material-icons prefix">attach_money</i>
                                 <select name="salary">
-                                    <option value="" disabled>Choose a Salary</option>
+                                    <option value="" disabled>Pilih gaji pokok</option>
                                     @foreach($salaries as $salary)
                                         <option value="{{$salary->id}}" {{old('salary') ? 'selected' : ''}} {{ $employee->empSalary==$salary ? 'selected' : '' }} >${{$salary->s_amount}}</option>
                                     @endforeach
                                 </select>
-                                <label>Salary</label>
+                                <label>Gaji Pokok</label>
                             </div>
                             <div class="input-field col s12 m12 l12 xl8 offset-xl2">
                                 <i class="material-icons prefix">business</i>
                                 <select name="department">
-                                    <option value="" disabled>Choose a department</option>
+                                    <option value="" disabled>Pilih departemen</option>
                                     @foreach($departments as $department)
                                         <option value="{{$department->id}}" {{old('department') ? 'selected' : ''}} {{ $employee->empDepartment==$department ? 'selected' : '' }} >{{$department->dept_name}}</option>
                                     @endforeach
                                 </select>
-                                <label>Department</label>
+                                <label>Departemen</label>
                             </div>
                             <div class="input-field col s12 m6 l6 xl4 offset-xl2">
                                 <i class="material-icons prefix">grid_on</i>
                                 <select name="state">
-                                    <option value="" disabled >Choose a State</option>
+                                    <option value="" disabled >Pilih provinsi</option>
                                     @foreach($states as $state)
                                         <option value="{{$state->id}}" {{ old('state') ? 'selected' : '' }} {{ $employee->empState==$state ? 'selected' : '' }} >{{$state->state_name}}</option>
                                     @endforeach
                                 </select>
-                                <label>State</label>
+                                <label>Provinsi</label>
                             </div>
                             <div class="input-field col s12 m6 l6 xl4">
                                 <i class="material-icons prefix">location_city</i>
                                 <select name="city">
-                                    <option value="" disabled>Choose a City</option>
+                                    <option value="" disabled>Pilih kota</option>
                                     @foreach($cities as $city)
                                         <option value="{{$city->id}}" {{ old('city') ? 'selected' : '' }} {{ $employee->empCity==$city ? 'selected' : '' }} >{{$city->city_name}}</option>
                                     @endforeach
                                 </select>
-                                <label>City</label>
+                                <label>Kota</label>
                             </div>
                             <div class="input-field col s12 m12 l12 xl8 offset-xl2">
                                 <i class="material-icons prefix">location_on</i>
                                 <select name="country">
-                                    <option value="" disabled >Choose a Country</option>
+                                    <option value="" disabled >Pilih negara</option>
                                     @foreach($countries as $country)
                                         <option value="{{$country->id}}" {{ $employee->empCountry==$country ? 'selected' : '' }}>{{$country->country_name}}</option>
                                     @endforeach
                                 </select>
-                                <label>Country</label>
+                                <label>Negara</label>
                             </div>
                             
                             <div class="input-field col s12 m6 l6 xl4 offset-xl2">
                                 <i class="material-icons prefix">date_range</i>
                                 <input type="text" name="join_date" id="join_date" class="datepicker" value="{{Request::old('join_date') ? : $employee->join_date}}">
-                                <label for="join_date">date joined</label>
+                                <label for="join_date">Tanggal Masuk</label>
                                 <span class="{{$errors->has('join_date') ? 'helper-text red-text' : ''}}">{{$errors->has('join_date') ? $errors->first('join_date') : ''}}</span>
                             </div>
                             <div class="input-field col s12 m6 l6 xl4">
                                 <i class="material-icons prefix">date_range</i>
                                 <input type="text" name="birth_date" id="birth_date" class="datepicker" value="{{Request::old('birth_date') ? : $employee->birth_date}}">
-                                <label for="birth_date">Date of birth</label>
+                                <label for="birth_date">Tanggal Lahir</label>
                                 <span class="{{$errors->has('birth_date') ? 'helper-text red-text' : ''}}">{{$errors->has('birth_date') ? $errors->first('birth_date') : '' }}</span>
                             </div>
                             <div class="input-field col s12 m12 l12 xl8 offset-xl2">
                                 <i class="material-icons prefix">business</i>
                                 <select name="division">
-                                    <option value="" disabled >Choose a Division</option>
+                                    <option value="" disabled >Pilih divisi</option>
                                     @foreach($divisions as $division)
                                         <option value="{{$division->id}}" {{ old('division') ? 'selected' : '' }} {{ $employee->empDivision==$division ? 'selected' : '' }} >{{$division->division_name}}</option>
                                     @endforeach
                                 </select>
-                                <label>Division</label>
+                                <label>Divisi</label>
                             </div>
                             <div class="file-field input-field col s12 m8 offset-m2 l8 offset-l2 xl8 offset-xl2">
                                 <div class="btn">
@@ -151,7 +151,7 @@
                     </form>
                 </div>
                 <div class="card-action">
-                    <a href="/employees">Go Back</a>
+                    <a href="/employees">Back</a>
                 </div>
             </div>
         </div>

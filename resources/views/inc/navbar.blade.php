@@ -2,7 +2,7 @@
     <nav class="gradient-bg">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="{{route('dashboard')}}" class="brand-logo hide-on-small-only">MSDM</a>
+                <a href="{{route('dashboard')}}" class="brand-logo hide-on-small-only">Sistem MSDM</a>
                 <a href="{{route('dashboard')}}" class="brand-logo show-on-small-only hide-on-med-and-up">MSDM</a>
                 <ul>
                     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons white-text">menu</i></a>
@@ -10,7 +10,7 @@
                 <ul class="right">
                     <li>
                         <a class="dropdown-trigger" href="#!" data-target="dropdown1">
-                            Selamat Datang, {{ Auth::user()->username }}
+                            Welcome, {{ Auth::user()->username }}
                             <i class="material-icons right white-text">arrow_drop_down</i>
                         </a>
                     </li>
