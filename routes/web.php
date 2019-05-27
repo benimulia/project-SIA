@@ -80,6 +80,13 @@ Route::resource('/employees','EmployeesController');
 Route::post('employees/search','EmployeesController@search')->name('employees.search');
 
 /**
+ *  Kehadiran Route(s)
+ */
+Route::resource('/kehadirans','KehadiransController');
+
+Route::post('kehadirans/search','KehadiransController@search')->name('kehadirans.search');
+
+/**
  *  Admins Route(s)
  */
 Route::resource('/admins','AdminsController');

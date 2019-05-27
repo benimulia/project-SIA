@@ -75,4 +75,11 @@ class Employee extends Model
     public function empGender(){
         return $this->belongsTo('App\Gender','gender_id');
     }
+
+    /**
+     * @return object
+     */
+    public function empKehadiran(){
+        return $this->belongsTo('App\Kehadiran','kehadiran_id');
+    }
 }
