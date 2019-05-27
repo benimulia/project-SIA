@@ -15,7 +15,7 @@ class CreateSalaryDetailsTable extends Migration
     {
         Schema::create('salary_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('employee_id');
+            $table->integer('employee_id')->unsigned();;
             $table->integer('dept_id')->unsigned();
             $table->integer('division_id')->unsigned();
             $table->integer('salary_id')->unsigned();
