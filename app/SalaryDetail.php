@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Salary_Details extends Model
+class SalaryDetail extends Model
 {
     use SoftDeletes;
     /**
@@ -24,7 +24,7 @@ class Salary_Details extends Model
     /**
      * @return object
      */
-    public function salEmplyee(){
+    public function salEmployee(){
         return $this->belongsTo('App\Employee','employee_id');
     }
 

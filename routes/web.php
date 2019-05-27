@@ -76,8 +76,13 @@ Route::post('/states/search','StatesController@search')->name('states.search');
  *  States Route(s)
  */
 Route::resource('/employees','EmployeesController');
-
 Route::post('employees/search','EmployeesController@search')->name('employees.search');
+
+/**
+ *  Salary Detail Route(s)
+ */
+Route::resource('/salarydetails','SalaryDetailsController');
+Route::post('salarydetails/search','SalaryDetailsController@search')->name('salarydetails.search');
 
 /**
  *  Admins Route(s)
