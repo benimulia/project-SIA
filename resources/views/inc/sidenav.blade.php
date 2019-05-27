@@ -15,6 +15,9 @@
         <a class="waves-effect waves-grey" href="/dashboard"><i class="material-icons">dashboard</i>Dashboard</a>
     </li>
     <li>
+        <a class="waves-effect waves-grey" href="/kehadirans"><i class="material-icons">fingerprint</i>Kehadiran</a>
+    </li>
+    <li>
         <a class="waves-effect waves-grey" href="/employees"><i class="material-icons">supervisor_account</i>Manajemen Pegawai</a>
     </li>
     <li class="no-padding">
@@ -71,10 +74,45 @@
                                 Negara
                             </a>
                         </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header"><i class="material-icons pl-15">assignment</i><span class="pl-15">Laporan</span></a>
+                <div class="collapsible-body">
+                    <ul>
                         <li>
                             <a href="/reports" class="waves-effect waves-grey">
                                 <i class="material-icons">insert_drive_file</i>
-                                Laporan
+                                Laporan Pegawai
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/salarydetails" class="waves-effect waves-grey">
+                                <i class="material-icons">insert_drive_file</i>
+                                Laporan Penggajian
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/kehadirans" class="waves-effect waves-grey">
+                                <i class="material-icons">insert_drive_file</i>
+                                Laporan Kehadiran
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="waves-effect waves-grey">
+                                <i class="material-icons">insert_drive_file</i>
+                                Jurnal Umum
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="waves-effect waves-grey">
+                                <i class="material-icons">insert_drive_file</i>
+                                Buku Besar
                             </a>
                         </li>
                     </ul>

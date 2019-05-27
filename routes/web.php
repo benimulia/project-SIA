@@ -79,10 +79,18 @@ Route::resource('/employees','EmployeesController');
 Route::post('employees/search','EmployeesController@search')->name('employees.search');
 
 /**
+<<<<<<< HEAD
  *  Salary Detail Route(s)
  */
 Route::resource('/salarydetails','SalaryDetailsController');
 Route::post('salarydetails/search','SalaryDetailsController@search')->name('salarydetails.search');
+=======
+ *  Kehadiran Route(s)
+ */
+Route::resource('/kehadirans','KehadiransController');
+
+Route::post('kehadirans/search','KehadiransController@search')->name('kehadirans.search');
+>>>>>>> 79562fd467643aa279b9108f1ac5a0cd22e82976
 
 /**
  *  Admins Route(s)

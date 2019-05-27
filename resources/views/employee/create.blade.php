@@ -62,7 +62,7 @@
                                 <select name="salary">
                                     <option value="" disabled {{ old('salary') ? '' : 'selected' }}>Pilih gaji pokok</option>
                                     @foreach($salaries as $salary)
-                                        <option value="{{$salary->id}}" {{ old('salary') ? 'selected' : '' }}>${{$salary->s_amount}}</option>
+                                        <option value="{{$salary->id}}" {{ old('salary') ? 'selected' : '' }}>Rp {{$salary->s_amount}}</option>
                                     @endforeach
                                 </select>
                                 <label>Gaji Pokok</label>
