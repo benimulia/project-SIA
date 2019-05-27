@@ -13,7 +13,7 @@ class CreateSalaryDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('salary__details', function (Blueprint $table) {
+        Schema::create('salary_details', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('employee_id');
             $table->integer('dept_id')->unsigned();
@@ -32,7 +32,13 @@ class CreateSalaryDetailsTable extends Migration
             $table->foreign('potongan_id')->references('id')->on('potongans');
             $table->foreign('tunjangan_id')->references('id')->on('tunjangans');
             $table->timestamps();
+
+
+            $table->softDeletes();
         });
+
+
+        
     }
 
     /**
@@ -42,6 +48,6 @@ class CreateSalaryDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('salary__details');
+        Schema::dropIfExists('salary_details');
     }
 }
