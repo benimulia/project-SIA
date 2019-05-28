@@ -45,6 +45,7 @@
                             <th>Potongan</th>
                             <th>Gaji Pokok</th>
                             <th>PPH</th>
+                            <th>Total_Gaji</th>
                         </tr>
                     </thead>
                     <tbody id="emp-table">
@@ -57,7 +58,8 @@
                                     <td>{{$salarydetail->salTunjangan->tunjangan_name}} {{$salarydetail->salTunjangan->jml_tunjangan}}</td>
                                     <td>{{$salarydetail->salPotongan->potongan_name}} {{$salarydetail->salPotongan->jml_potongan}}</td>
                                     <td>{{$salarydetail->salSalary->s_amount}}</td>
-                                    <td>{{$salarydetail->pph}}</td>                                    
+                                    <td>{{$salarydetail->pph}}</td>
+                                    <td>{{$salarydetail->salSalary->s_amount + $salarydetail->salTunjangan->jml_tunjangan - $salarydetail->salPotongan->jml_potongan - $salarydetail->salSalary->s_amount * 0.05}}</td>                                     
                                 </tr>
                             @endforeach
                             @if(isset($search))
