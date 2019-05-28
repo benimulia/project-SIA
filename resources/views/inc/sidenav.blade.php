@@ -79,6 +79,9 @@
             </li>
         </ul>
     </li>
+    <li>
+        <a class="waves-effect waves-grey" href="/salarydetails"><i class="material-icons">attach_money</i>Detail Gaji</a>
+    </li>
     <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
             <li>
