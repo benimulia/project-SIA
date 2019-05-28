@@ -96,6 +96,9 @@ Route::post('kehadirans/search','KehadiransController@search')->name('kehadirans
 Route::resource('/accounts','AccountsController');
 Route::post('/accounts/search','AccountsController@search')->name('accounts.search');
 
+Route::post('/reports/kehadiran','LaporanController@LaporanKehadiran')->name('LaporanKehadiran');
+Route::get('/reports/kehadiranbulan','LaporanController@vLaporanKehadiran')->name('vLaporanKehadiran');
+
 /**
  *  Admins Route(s)
  */
@@ -133,3 +136,13 @@ Route::get('/reports','ReportsController@index')->name('reports.index');
 
 //Generate PDF
 Route::post('/reports/pdf','ReportsController@makeReport')->name('reports.make');
+
+/**
+ *  Reports Route(s)
+ */
+
+//Show Reports View
+Route::get('/reportkehadiran','ReportKehadiranController@index')->name('reportkehadiran.index');
+
+//Generate PDF
+Route::post('/reportkehadiran/pdf','ReportKehadiranController@makeReport')->name('reportkehadiran.make');
