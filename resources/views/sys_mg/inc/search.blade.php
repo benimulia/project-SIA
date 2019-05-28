@@ -3,7 +3,7 @@
     <ul class="collapsible">
         <li>
             <div class="collapsible-header">
-                <i class="material-icons">cari</i>
+                <i class="material-icons">search</i>
                 Search {{$title}}
             </div>
             <div class="collapsible-body">

@@ -87,8 +87,14 @@ Route::post('salarydetails/search','SalaryDetailsController@search')->name('sala
  *  Kehadiran Route(s)
  */
 Route::resource('/kehadirans','KehadiransController');
-
 Route::post('kehadirans/search','KehadiransController@search')->name('kehadirans.search');
+
+/**
+ *  Accounts Route(s)
+ * 
+ */
+Route::resource('/accounts','AccountsController');
+Route::post('/accounts/search','AccountsController@search')->name('accounts.search');
 
 /**
  *  Admins Route(s)
