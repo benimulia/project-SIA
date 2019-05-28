@@ -46,9 +46,10 @@
                             <th>Gaji Pokok</th>
                             <th>PPH</th>
                             <th>Total_Gaji</th>
+                            <th>Options</th>
                         </tr>
                     </thead>
-                    <tbody id="emp-table">
+                    <tbody id="dept-table">
                         <!-- Check if there are any employee to render in view -->
                         @if($salarydetails->count())
                             @foreach($salarydetails as $salarydetail)
@@ -59,7 +60,21 @@
                                     <td>{{$salarydetail->salPotongan->potongan_name}} {{$salarydetail->salPotongan->jml_potongan}}</td>
                                     <td>{{$salarydetail->salSalary->s_amount}}</td>
                                     <td>{{$salarydetail->pph}}</td>
-                                    <td>{{$salarydetail->salSalary->s_amount + $salarydetail->salTunjangan->jml_tunjangan - $salarydetail->salPotongan->jml_potongan - $salarydetail->salSalary->s_amount * 0.05}}</td>                                     
+                                    <td>{{$salarydetail->salSalary->s_amount + $salarydetail->salTunjangan->jml_tunjangan - $salarydetail->salPotongan->jml_potongan - $salarydetail->salSalary->s_amount * 0.05}}</td>
+                                    <td>
+                                        <div class="row mb-0">
+                                        <div class="col">
+                                                <a href="{{route('salarydetails.edit',$salarydetail->id)}}" class="btn btn-floating btn-small waves=effect waves-light orange"><i class="material-icons">mode_edit</i></a>
+                                            </div><br/> 
+                                            <div class="col">
+                                                <form action="{{route('salarydetails.destroy',$salarydetail->id)}}" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf()
+                                                    <button type="submit" class="btn btn-floating btn-small waves=effect waves-light red"><i class="material-icons">delete</i></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>                                 
                                 </tr>
                             @endforeach
                             @if(isset($search))

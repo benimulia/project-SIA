@@ -95,6 +95,7 @@ class SalaryDetailsController extends Controller
             'search' => 'required'
         ]);
         $str = $request->input('search');
+        $option = $request->input('options');
         $employees = Employee::where($option, 'LIKE' , '%'.$str.'%')->Paginate(4);
         return view('salarydetails.index')->with([ 'salarydetails' => $salarydetails ,'search' => true ]);
     }
@@ -158,5 +159,65 @@ class SalaryDetailsController extends Controller
         
         
         $salarydetail->save();
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        /**
+         *  this is same as create but with an existing
+         *  employee
+         */
+        $employees = Employee::orderBy('id','first_name')->get();
+        $salaries     = Salary::orderBy('s_amount','asc')->get();
+        $tunjangans    = Tunjangan::orderBy('tunjangan_name','asc')->get();
+        $potongans      = Potongan::orderBy('potongan_name','asc')->get();
+
+        $salarydetail = SalaryDetail::find($id);
+        return view('salarydetails.edit')->with([
+            'employees'  => $employees,
+            'tunjangans'  => $tunjangans,
+            'potongans'  => $potongans,
+            'salaries'  => $salaries
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+
+        $this->validateRequest($request,$id);
+        $salarydetail = SalaryDetail::find($id);
+        /**
+         *  updating an existing employee with setEmployee
+         *  method
+         */
+        $this->setSalaryDetail($salarydetail,$request);
+        
+        return redirect('/salarydetails')->with('info','Data Detail Gaji telah diubah');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $salarydetail = SalaryDetail::find($id);
+        $salarydetail->delete();
+        return redirect('/salarydetails')->with('info','Data Detail Gaji telah dihapus!');
     }
 }
