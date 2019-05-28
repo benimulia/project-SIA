@@ -3,15 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use DB;
-use App\SalaryDetail;
 use App\Employee;
-use App\Department;
+use App\SalaryDetail;
 use App\Salary;
-use App\Division;
-use App\Potongan;
 use App\Tunjangan;
+use App\Potongan;
 
 class SalaryDetailsController extends Controller
 {
@@ -30,34 +27,28 @@ class SalaryDetailsController extends Controller
     public function index()
     {
         $salarydetails = SalaryDetail::Paginate(4);
-        return view('salarydetail.index')->with('salarydetails',$salarydetails);
+        return view('salarydetails.index')->with('salarydetails',$salarydetails);
     }
 
     public function create()
     {
         /**
-         *  Get Departments so we can show department
-         *  name on the department dropdown in the view
+         *  Get Employees so we can show employee
+         *  name on the employee dropdown in the view
          */
-        $departments = Department::orderBy('dept_name','asc')->get();
-        /**
-         *  this and other objects works the same as department
-         */
+        $employees = Employee::orderBy('id','first_name')->get();
         $tunjangans = Tunjangan::orderBy('tunjangan_name','asc')->get();
-        $employees = Employee::orderBy('first_name','asc')->get();
         $potongans = Potongan::orderBy('potongan_name','asc')->get();
         $salaries = Salary::orderBy('s_amount','asc')->get();
-        $divisions = Division::orderBy('division_name','asc')->get();
+
         /**
          *  return the view with an array of all these objects
          */
-        return view('salarydetail.create')->with([
-            'departments'  => $departments,
-            'employees'    => $employees,
-            'tunjangans'   => $tunjangans,
-            'potongans'    => $potongans,
-            'salaries'     => $salaries,
-            'divisions'    => $divisions,
+        return view('salarydetails.create')->with([
+            'employees'  => $employees,
+            'tunjangans'  => $tunjangans,
+            'potongans'  => $potongans,
+            'salaries'  => $salaries,
         ]);
     }
 
@@ -84,105 +75,28 @@ class SalaryDetailsController extends Controller
          *  php artisan storage:link  
          */
 
-       
-
         /**
          *  Create new object of Employee
          */
-        $salarydetails = new SalaryDetail();
+        $salarydetail = new SalaryDetail();
         
         /**
          *  setEmployee is also a method of this controller
          *  which i have created, so i can use it for update 
          *  method.
          */
-        $this->setSalaryDetail($salarydetails,$request);
-        
-        return redirect('/salarydetails')->with('info','Detail Gaji baru telah ditambahkan!');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        /**
-         *  Get Departments so we can show department
-         *  name on the department dropdown in the view
-         */
-        $departments = Department::orderBy('dept_name','asc')->get();
-        /**
-         *  this and other objects works the same as department
-         */
-        $tunjangans = Tunjangan::orderBy('tunjangan_name','asc')->get();
-        $employees = Employee::orderBy('first_name','asc')->get();
-        $potongans = Potongan::orderBy('potongan_name','asc')->get();
-        $salaries = Salary::orderBy('s_amount','asc')->get();
-        $divisions = Division::orderBy('division_name','asc')->get();
-
-        $salarydetail = SalaryDetail::find($id);
-        return view('salarydetail.create')->with([
-            'departments'  => $departments,
-            'employees'    => $employees,
-            'tunjangans'   => $tunjangans,
-            'potongans'    => $potongans,
-            'salaries'     => $salaries,
-            'divisions'    => $divisions,
-        ]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-
-        $this->validateRequest($request,$id);
-        $salarydetail = SalaryDetail::find($id);
-        
-        /**
-         *  updating an existing employee with setEmployee
-         *  method
-         */
         $this->setSalaryDetail($salarydetail,$request);
-        return redirect('/salarydetails')->with('info','Detail Gaji berhasil diubah!');
+        
+        return redirect('/salarydetails')->with('info','Data Detail Gaji telah ditambahkan');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $salarydetail = SalaryDetail::find($id);
-        $salarydetail->delete();
-        return redirect('/salarydetails')->with('info','Detail Gaji telah dihapus!');
-    }
-
-    /**
-     *  Search For Resource(s)
-     * 
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function search(Request $request){
         $this->validate($request,[
-            'search'   => 'required|min:1',
-            'options'  => 'required'
+            'search' => 'required'
         ]);
         $str = $request->input('search');
-        $option = $request->input('options');
-        $salarydetails = SalaryDetail::where($option, 'LIKE' , '%'.$str.'%')->Paginate(4);
-        return view('salarydetail.index')->with(['salarydetails' => $salarydetails , 'search' => true ]);
+        $employees = Employee::where($option, 'LIKE' , '%'.$str.'%')->Paginate(4);
+        return view('salarydetails.index')->with([ 'salarydetails' => $salarydetails ,'search' => true ]);
     }
 
     /**
@@ -202,14 +116,12 @@ class SalaryDetailsController extends Controller
          *  if we are updating an employee but not updating the image. 
          */
         return $this->validate($request,[
+            'tgl_gaji'  =>  'required',
             'employee'       =>  'required',
-            'department'     =>  'required',
-            'division'       =>  'required',
-            'salary'         =>  'required',
-            'tunjangan'      =>  'required',
+            'tunjangan'       =>  'required',
             'potongan'       =>  'required',
-            'PPH'            =>  'required|max:2',
-            'salary_total'   =>  'required|max:9'
+            'salary'       =>  'required',
+            'pph'  =>  'required'
             /**
              *  if we are updating an employee but not changing the
              *  email then this will throw a validation error saying
@@ -237,16 +149,14 @@ class SalaryDetailsController extends Controller
      * @return Boolean
      */
     private function setSalaryDetail(SalaryDetail $salarydetail,Request $request){
-        $salarydetail->first_name   = $request->input('first_name');
-        $salarydetail->dept_id      = $request->input('department');
-        $salarydetail->division_id  = $request->input('division');
-        $salarydetail->salary_id    = $request->input('salary'); 
-        $salarydetail->tunjangan_id    = $request->input('tunjangan');
-        $salarydetail->potongan_id    = $request->input('potongan');
-        $salarydetail->pph   = $request->input('PPH');
-        $salarydetail->salary_total   = $request->input('salary_total');
+        $salarydetail->tgl_gaji   = date('Y-m-d', strtotime(str_replace('-', '/', $request->input('tgl_gaji'))));
+        $salarydetail->employee_id     = $request->input('employee');
+        $salarydetail->tunjangan_id     = $request->input('tunjangan');
+        $salarydetail->potongan_id     = $request->input('potongan');
+        $salarydetail->salary_id     = $request->input('salary');
+        $salarydetail->pph      = $request->input('pph');
+        
         
         $salarydetail->save();
     }
-
 }

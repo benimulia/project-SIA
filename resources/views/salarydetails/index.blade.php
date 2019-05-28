@@ -19,13 +19,6 @@
                                 <label for="search">Search Pegawai</label>
                                 <span class="{{$errors->has('search') ? 'helper-text red-text' : '' }}">{{$errors->has('search') ? $errors->first('search') : '' }}</span>
                             </div>
-                            <div class="input-field col s12 m6 l4 xl4">
-                                <select name="options" id="options">
-                                    <option value="employee_id">ID Pegawai</option>
-                                    <option value="first_name">Nama Pegawai</option>
-                                </select>
-                                <label for="options">Search by:</label>
-                            </div>
                             <br>
                             <div class="col l2">
                                 <button type="submit" class="btn waves-effect waves-light">Search</button>
@@ -41,19 +34,17 @@
     <div class="card">
         <div class="card-content">
             <div class="row">
-                <h5 class="pl-15 grey-text text-darken-2">Data Pegawai</h5>
+                <h5 class="pl-15 grey-text text-darken-2">Detail Gaji Pegawai</h5>
                 <!-- Table that shows Employee List -->
                 <table class="responsive-table col s12 m12 l12 xl12">
                     <thead class="grey-text text-darken-1">
                         <tr>
-                            <th>ID</th>
+                            <th>Tanggal Penggajian</th>
                             <th>Nama Pegawai</th>
-                            <th>Departemen</th>
-                            <th>Divisi</th>
-                            <th>Gaji</th>
+                            <th>Tunjangan</th>
+                            <th>Potongan</th>
+                            <th>Gaji Pokok</th>
                             <th>PPH</th>
-                            <th>Total Gaji</th>
-                            <th>Options</th>
                         </tr>
                     </thead>
                     <tbody id="emp-table">
@@ -61,28 +52,25 @@
                         @if($salarydetails->count())
                             @foreach($salarydetails as $salarydetail)
                                 <tr>
-                                    <td>{{$salarydetail->salEmployee->employee_id}}</td>
-                                    <td>{{$salarydetail->salEmployee->first_name}} {{$employee->salEmployee->last_name}}</td>
-                                    <td>{{$salarydetail->salDepartment->dept_name}}</td>
-                                    <td>{{$salarydetail->salDivision->division_name}}</td>
+                                    <td>{{$salarydetail->tgl_gaji}}</td>
+                                    <td>{{$salarydetail->salEmployee->first_name}} {{$salarydetail->salEmployee->last_name}}</td>
+                                    <td>{{$salarydetail->salTunjangan->tunjangan_name}} {{$salarydetail->salTunjangan->jml_tunjangan}}</td>
+                                    <td>{{$salarydetail->salPotongan->potongan_name}} {{$salarydetail->salPotongan->jml_potongan}}</td>
                                     <td>{{$salarydetail->salSalary->s_amount}}</td>
-                                    <td>{{$salarydetail->PPH}}</td>
-                                    <td>{{$salarydetail->salary_total}}</td>
-                                    <a href="{{route('employees.show',$employee->id)}}" class="btn btn-small btn-floating waves=effect waves-light teal lighten-2"><i class="material-icons">list</i></a>
-                                    </td>
+                                    <td>{{$salarydetail->pph}}</td>                                    
                                 </tr>
                             @endforeach
                             @if(isset($search))
                                 <tr>
                                     <td colspan="4">
-                                        <a href="/employees" class="right">Show All</a>
+                                        <a href="/salarydetails" class="right">Show All</a>
                                     </td>
                                 </tr>
                             @endif
                         @else
                             {{-- if there are no employees then show this message --}}
                             <tr>
-                                <td colspan="5"><h6 class="grey-text text-darken-2 center">No Employees Found!</h6></td>
+                                <td colspan="5"><h6 class="grey-text text-darken-2 center">Detail Gaji tidak Ada!</h6></td>
                             </tr>
                         @endif
                     </tbody>
