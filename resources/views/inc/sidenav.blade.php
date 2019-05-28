@@ -92,7 +92,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/salarydetails" class="waves-effect waves-grey">
+                            <a href="/reportgaji" class="waves-effect waves-grey">
                                 <i class="material-icons">insert_drive_file</i>
                                 Laporan Penggajian
                             </a>
@@ -104,7 +104,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="waves-effect waves-grey">
+                            <a href="/reportjurnal" class="waves-effect waves-grey">
                                 <i class="material-icons">insert_drive_file</i>
                                 Jurnal Umum
                             </a>

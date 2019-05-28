@@ -9,7 +9,7 @@ use Carbon\Carbon;
 use PDF;
 use App;
 
-class ReportGajiController extends Controller
+class ReportJurnalController extends Controller
 {
     /**
      *  Only authenticated users can access this controller
@@ -25,8 +25,8 @@ class ReportGajiController extends Controller
      */
     public function index()
     {
-        $salary_details = SalaryDetail::Paginate(4);
-        return view('reports.gaji')->with('salary_details',$salary_details);
+        $salarydetails = SalaryDetail::Paginate(4);
+        return view('reports.jurnal')->with('salarydetails',$salarydetails);
     }
 
     /**
@@ -46,10 +46,10 @@ class ReportGajiController extends Controller
         /**
          *  employees between two dates
          */
-        $salary_details = SalaryDetail::whereBetween('tgl_gaji' ,[new Carbon($date_from),new Carbon($date_to)])->get();
+        $salarydetails = SalaryDetail::whereBetween('tgl_gaji' ,[new Carbon($date_from),new Carbon($date_to)])->get();
 
         //generate pdf
-        $pdf = PDF::loadView('reports.laporangaji',['salary_details' => $salary_details])->setPaper('a4', 'landscape');
-        return $pdf->stream('laporan_gaji_dari'.$date_from.'_hingga_'.$date_to.'.pdf');
+        $pdf = PDF::loadView('reports.laporanjurnal',['salarydetails' => $salarydetails])->setPaper('a4', 'landscape');
+        return $pdf->stream('laporan_junal_umum_dari'.$date_from.'_hingga_'.$date_to.'.pdf');
     }
 }

@@ -96,8 +96,6 @@ Route::post('kehadirans/search','KehadiransController@search')->name('kehadirans
 Route::resource('/accounts','AccountsController');
 Route::post('/accounts/search','AccountsController@search')->name('accounts.search');
 
-Route::post('/reports/kehadiran','LaporanController@LaporanKehadiran')->name('LaporanKehadiran');
-Route::get('/reports/kehadiranbulan','LaporanController@vLaporanKehadiran')->name('vLaporanKehadiran');
 
 /**
  *  Admins Route(s)
@@ -146,3 +144,23 @@ Route::get('/reportkehadiran','ReportKehadiranController@index')->name('reportke
 
 //Generate PDF
 Route::post('/reportkehadiran/pdf','ReportKehadiranController@makeReport')->name('reportkehadiran.make');
+
+/**
+ *  Reports Route(s)
+ */
+
+//Show Reports View
+Route::get('/reportjurnal','ReportJurnalController@index')->name('reportjurnal.index');
+
+//Generate PDF
+Route::post('/reportjurnal/pdf','ReportJurnalController@makeReport')->name('reportjurnal.make');
+
+Route::get('/reportgaji','ReportGajiController@index')->name('reportgaji.index');
+
+//Generate PDF
+Route::post('/reportgaji/pdf','ReportGajiController@makeReport')->name('reportgaji.make');
+
+Route::get('/reportbukubesar','ReportBukuBesarController@index')->name('reportbukubesar.index');
+
+//Generate PDF
+Route::post('/reportbukubesar/pdf','ReportBukuBesarController@makeReport')->name('reportbukubesar.make');
