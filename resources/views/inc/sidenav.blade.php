@@ -98,7 +98,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/kehadirans" class="waves-effect waves-grey">
+                            <a href="/reportkehadiran" class="waves-effect waves-grey">
                                 <i class="material-icons">insert_drive_file</i>
                                 Laporan Kehadiran
                             </a>
