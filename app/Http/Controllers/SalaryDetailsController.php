@@ -95,8 +95,9 @@ class SalaryDetailsController extends Controller
             'search' => 'required'
         ]);
         $str = $request->input('search');
-        $option = $request->input('options');
-        $employees = Employee::where($option, 'LIKE' , '%'.$str.'%')->Paginate(4);
+        $salarydetails = SalaryDetail::where( 'employee_id' , 'LIKE' , '%'.$str.'%' )
+            ->orderBy('employee_id','asc')
+            ->paginate(4);
         return view('salarydetails.index')->with([ 'salarydetails' => $salarydetails ,'search' => true ]);
     }
 

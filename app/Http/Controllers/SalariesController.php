@@ -122,7 +122,7 @@ class SalariesController extends Controller
             'search' => 'required'
         ]);
         $str = $request->input('search');
-        $salaries = Salary::where( 's_amount' , 'LIKE' , '%'.$str.'%' )
+        $kehadirans = Kehadiran::where( 's_amount' , 'LIKE' , '%'.$str.'%' )
             ->orderBy('s_amount','asc')
             ->paginate(4);
         return view('sys_mg.salaries.index')->with([ 'salaries' => $salaries ,'search' => true ]);

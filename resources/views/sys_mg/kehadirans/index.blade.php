@@ -8,7 +8,7 @@
             <li>
                 <div class="collapsible-header">
                     <i class="material-icons">search</i>
-                    Search Pegawai
+                    Search Kehadiran Pegawai
                 </div>
                 <div class="collapsible-body">
                     <div class="row mb-0">
@@ -16,7 +16,7 @@
                             @csrf()
                             <div class="input-field col s12 m6 l5 xl6">
                                 <input id="search" type="text" name="search" >
-                                <label for="search">Search Pegawai</label>
+                                <label for="search">Search by ID Pegawai</label>
                                 <span class="{{$errors->has('search') ? 'helper-text red-text' : '' }}">{{$errors->has('search') ? $errors->first('search') : '' }}</span>
                             </div>
                             <br>
