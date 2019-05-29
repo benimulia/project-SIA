@@ -1,11 +1,36 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <h4 class="grey-text text-darken-2 center">Manajemn Provinsi</h4>
+    <h4 class="grey-text text-darken-2 center">Manajemen Provinsi</h4>
     
-    {{-- Include the searh component with with title and route --}}
-    @component('sys_mg.inc.search',['title' => 'Provinsi' , 'route' => 'states.search'])
-    @endcomponent
+    {{-- Search --}}
+    <div class="row mb-0">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">search</i>
+                    Search Provinsi
+                </div> 
+                <div class="collapsible-body">
+                    <div class="row mb-0">
+                        <form action="{{route('states.search')}}" method="POST">
+                            @csrf()
+                            <div class="input-field col s12 m6 l5 xl6">
+                                <input id="search" type="text" name="search" >
+                                <label for="search">Search by Nama Provinsi</label>
+                                <span class="{{$errors->has('search') ? 'helper-text red-text' : '' }}">{{$errors->has('search') ? $errors->first('search') : '' }}</span>
+                            </div>
+                            <br>
+                            <div class="col l2">
+                                <button type="submit" class="btn waves-effect waves-light">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    {{-- Search END --}}
 
     <div class="row">
         <!-- Show All States List as a Card -->
