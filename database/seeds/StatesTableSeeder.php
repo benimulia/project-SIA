@@ -15,7 +15,7 @@ class StatesTableSeeder extends Seeder
         $state->state_name = 'DI Yogyakarta';
         $state->save();
         $state = new State();
-        $state->state_name = 'DKI Jakrta';
+        $state->state_name = 'DKI Jakarta';
         $state->save();
     }
 }
