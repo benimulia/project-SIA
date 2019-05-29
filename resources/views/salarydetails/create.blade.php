@@ -37,7 +37,7 @@
                                 <label>Tunjangan</label>
                             </div>
                             <div class="input-field col s12 m6 l6 xl8 offset-xl2">
-                                <i class="material-icons prefix">attach_money</i>
+                                <i class="material-icons prefix">money_off</i>
                                 <select name="potongan">
                                     <option value="" disabled {{ old('potongan') ? '' : 'selected' }}>Pilih Potongan</option>
                                     @foreach($potongans as $potongan)
