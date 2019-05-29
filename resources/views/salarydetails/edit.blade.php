@@ -8,7 +8,7 @@
                 </div>
                 <hr>
                 <div class="card-content">
-                    <form action="{{route('salarydetail.update',$salarydetail->id)}}" method="POST">
+                    <form action="{{route('salarydetails.update',$salarydetail->id)}}" method="POST">
                         <div class="row">
                             <div class="input-field col s12 m6 l6 xl4 offset-xl2">
                                 <i class="material-icons prefix">person_outline</i>
